@@ -19,25 +19,48 @@ import org.json.JSONObject;
  */
 public class Pokedex extends JsonReader {
     
-//I thing it will be better to have a Map with the PokemonId and the name
-	
+
+	public Pokemon pokemon[] = new Pokemon[803]; 
+        int i;
+        
+        
+        public void ConstroiPokemons() throws JSONException{
+        
+            for(i=0;i<=801;i++){
+        
+                pokemon[i] = new Pokemon();
+        
+        
+            }
+        
+        }
+        
 	
 	public Pokedex(){}
 	
-	
-	public ArrayList<Pokemon> getPokemons() throws JSONException{
-		ArrayList<Pokemon> pokemons = new ArrayList<Pokemon>();
+        public void SetNomes() throws JSONException{
+            
+                ConstroiPokemons();
+                  
+                String dados = "";
 		
-		for (int i = 1; i <= 950; i++){
-			Pokemon p = new Pokemon(i);
-			pokemons.add(p);
-		}
-		if (pokemons.isEmpty()) { return null;}
-		
-		return pokemons;
-	}
-	
-	
+		dados = get();
+        
+                JSONObject root = parse(dados);
+                
+                
+			JSONArray pokemonNode = root.getJSONArray("results");
+			
+			
+			
+				for (int i = 0; i < 802; i++) {
+                                    
+					pokemon[i].name = pokemonNode.getJSONObject(i).getString("name");
+					//gets the pokemon name
+					
+				}
+        }
+
 }
     
     

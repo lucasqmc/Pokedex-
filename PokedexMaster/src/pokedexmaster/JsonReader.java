@@ -31,7 +31,7 @@ public class JsonReader {
         public static String get() {
 		String dados = "";
 		try {
-			dados = Request.Get("http://pokeapi.co/api/v2/pokedex/1").execute().returnContent().asString();
+			dados = Request.Get("http://pokeapi.co/api/v2/pokemon-form").execute().returnContent().asString();
 		} catch (Exception e){
 			e.printStackTrace();
 		}
@@ -51,32 +51,6 @@ public class JsonReader {
 
 		return null;
 	}
-    
-    
-        public static void main(String[] args) throws JSONException{
-        
-            Pokedex pokedex = new Pokedex();
-            int i;
-            
-       ArrayList<Pokemon> pokemons = new ArrayList<Pokemon>();
        
-       pokemons = pokedex.getPokemons();
-       
-       System.out.println(pokemons.get(0).name);
-       System.out.println(pokemons.get(0).weight);
-       System.out.println(pokemons.get(1).name);
-       System.out.println(pokemons.get(1).weight);
-       System.out.println(pokemons.get(2).name);
-       System.out.println(pokemons.get(2).weight);
-       System.out.println(pokemons.get(3).name);
-       System.out.println(pokemons.get(3).weight);
-       System.out.println(pokemons.get(4).name);
-       System.out.println(pokemons.get(4).weight);
-       System.out.println(pokemons.get(5).name);
-       System.out.println(pokemons.get(5).weight);
-        
-        
-       }
-      
 
 }

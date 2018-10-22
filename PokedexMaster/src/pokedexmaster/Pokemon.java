@@ -21,6 +21,7 @@ public class Pokemon extends JsonReader {
 		initializePokemon("");
 	}
         
+        
         // Construtor mais importante: recebe id do pokemon 
         
         public Pokemon(int ID) throws JSONException{
@@ -34,31 +35,19 @@ public class Pokemon extends JsonReader {
 		
 		initializePokemon(dados);
 	}
+        
+        
     
         public void initializePokemon(String dados) throws JSONException{
-            if(dados.equals("")){
+          
             
                 name = "";
                 height = 0;
                 id = 0;
                 weight = 0;
-            
-            
-            }
-            
-            else{
-                
-                JSONObject root = parse(dados);
-                
-                
-                name = root.getString("name");
-                height = root.getInt("height");
-                id = root.getInt("id");
-                weight = root.getInt("weight");
-            
-            
-            }
         
         }
+        
+
         
 }
