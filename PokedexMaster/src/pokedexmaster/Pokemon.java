@@ -5,6 +5,7 @@
  */
 package pokedexmaster;
 
+import javax.swing.ImageIcon;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -16,6 +17,7 @@ public class Pokemon extends JsonReader {
     
     	public String name;
 	public int height,weight;
+        public ImageIcon icon;
 	
     	public Pokemon() throws JSONException{
 		initializePokemon("");
@@ -44,9 +46,18 @@ public class Pokemon extends JsonReader {
                 name = "";
                 height = 0;
                 weight = 0;
+                icon = null;
         
         }
         
-
+        public ImageIcon getIcon(){
+            return icon;
+     
+        }
+        
+        public String getName(){
+            return name;
+        
+        }
         
 }

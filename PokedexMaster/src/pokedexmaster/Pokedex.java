@@ -31,7 +31,7 @@ import org.json.JSONObject;
 public class Pokedex extends JsonReader {
     
 
-	public Pokemon pokemon[] = new Pokemon[941];
+	Pokemon[] pokemon = new Pokemon[946];
         int i;
                 
         public ImageIcon RetornaUmIcon() throws IOException {
@@ -52,13 +52,13 @@ public class Pokedex extends JsonReader {
         public Pokedex(){}
         
         
-        public void ConstroiPokemons() throws JSONException{
+        public void ConstroiPokemons() throws JSONException, IOException{
         
             for(i=0;i<=940;i++){
         
                 pokemon[i] = new Pokemon();
         
-        
+               
             }
         
         }
@@ -66,9 +66,8 @@ public class Pokedex extends JsonReader {
         public void ConseguePokemonsInfo() throws JSONException, IOException{
             
                 ConstroiPokemons();
-               
-                  
-                String dados = "";
+                
+                                String dados = "";
 		
 		dados = get();
         
@@ -76,17 +75,25 @@ public class Pokedex extends JsonReader {
                 
 			 JSONArray pokemonNode = root.getJSONArray("results");
 		
-				for (int i = 0; i <= 940; i++) {
+				for (int i = 0; i <= 940 ; i++) {
                                     
 					pokemon[i].name = pokemonNode.getJSONObject(i).getString("name");
 					//gets the pokemon name
 					
 				}
+                                for (int i = 0; i <= 30; i++) {
+                                    
+                                    URL url = new URL("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+ (i+1) + ".png" );
+              
+                                    BufferedImage img = ImageIO.read(url);
+                                    
+					pokemon[i].icon = new ImageIcon(img);
+					//gets the pokemon name
+					
+				}
+                                
         }
         
-        
-
-
 }
     
     

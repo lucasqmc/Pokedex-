@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import org.json.JSONException;
 
 /**
@@ -41,18 +42,16 @@ public class NewJFrame extends javax.swing.JFrame {
                       pokedex.ConseguePokemonsInfo();
                       DefaultListModel dm = new DefaultListModel();
     
-                      dm.clear();
+                      
                       int i;
         
-                for (i = 0; i <= 940; i++ ){
-                    dm.addElement(pokedex.pokemon[i].name);
-                   dm.addElement(pokedex.RetornaUmIcon());
-                   
-       
+                for (i = 0; i <= 30; i++ ){
+                    dm.addElement(new NameIcon(pokedex.pokemon[i].name, pokedex.pokemon[i].icon));
+                    
                     }
                 
               
-             
+                jList1.setCellRenderer( new Renderer());
                 jList1.setModel(dm);
         
     }
@@ -71,17 +70,14 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(226, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(226, 226, 226))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(543, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
         );
 
         pack();
