@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public class Pokemon extends JsonReader {
     
     	public String name;
-	public int height, id, weight;
+	public int height,weight;
 	
     	public Pokemon() throws JSONException{
 		initializePokemon("");
@@ -43,7 +43,6 @@ public class Pokemon extends JsonReader {
             
                 name = "";
                 height = 0;
-                id = 0;
                 weight = 0;
         
         }
