@@ -10,13 +10,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
+import java.lang.Object;
+import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import org.json.JSONException;
 
 /**
  *
  * @author lucas
  */
-public class NewJFrame extends javax.swing.JFrame {
+public class NewJFrame extends javax.swing.JFrame implements ListSelectionListener {
 
     /**
      * Cria Janela JFRAME:
@@ -34,8 +39,8 @@ public class NewJFrame extends javax.swing.JFrame {
      */
     Pokedex pokedex = new Pokedex();
     
-    
-    
+    //Métodos que eu criei :
+
         public void PreencheListaPokemon() throws JSONException, IOException{
         // Uso funções da pokedex para construir os pokemons.
                
@@ -57,6 +62,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 jList1.setModel(dm);
         
     }
+
  
 
      
@@ -73,8 +79,13 @@ public class NewJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jList1.setSelectionBackground(new java.awt.Color(36, 45, 98));
-        jList1.setSelectionForeground(new java.awt.Color(65, 189, 192));
+        jList1.setSelectionBackground(new java.awt.Color(25, 28, 41));
+        jList1.setSelectionForeground(new java.awt.Color(26, 190, 192));
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jList1);
 
         jButton1.setText("Mais 20 pokemons");
@@ -165,6 +176,17 @@ public class NewJFrame extends javax.swing.JFrame {
                 
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+        
+        
+        
+        JOptionPane.showMessageDialog(this,jList1.getSelectedValue()); 
+
+
+    }//GEN-LAST:event_jList1MouseClicked
+
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -217,4 +239,12 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void valueChanged(ListSelectionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
+
 }

@@ -15,6 +15,8 @@ public class NameIcon {
     
      private String value;
      private ImageIcon icon;
+     private int ID;
+     
         public NameIcon(String value, ImageIcon icon) {
       this.value = value;
       this.icon = icon;
@@ -28,9 +30,7 @@ public class NameIcon {
       return icon;
    }
   
-   public String toString() {
-      return value;
-   }
+
 }
     
 

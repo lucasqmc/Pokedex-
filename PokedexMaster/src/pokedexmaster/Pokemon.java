@@ -16,7 +16,7 @@ import org.json.JSONObject;
 public class Pokemon extends JsonReader {
     
     	public String name;
-	public int height,weight;
+	public int height,weight,id;
         public ImageIcon icon;
 	
     	public Pokemon() throws JSONException{

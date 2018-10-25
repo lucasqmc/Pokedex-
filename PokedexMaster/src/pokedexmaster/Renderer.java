@@ -24,7 +24,7 @@ public class Renderer
                                                  boolean cellHasFocus) {
       NameIcon entry = (NameIcon) value;
   
-      setText(value.toString());
+      setText(entry.getValue());
       setIcon(entry.getIcon());
    
       if (isSelected) {
