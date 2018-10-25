@@ -36,7 +36,7 @@ public class Renderer
          setForeground(list.getForeground());
       }
   
-      setEnabled(list.isEnabled());
+      setEnabled(true);
       setFont(list.getFont());
       setOpaque(true);
   

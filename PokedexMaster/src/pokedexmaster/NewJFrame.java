@@ -74,7 +74,6 @@ public class NewJFrame extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jList1);
 
         jButton1.setText("Mais 20 pokemons");
-        jButton1.setActionCommand("Mais 20 pokemons");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -105,9 +104,11 @@ public class NewJFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1))
+                .addGap(74, 74, 74)
+                .addComponent(jButton1)
+                .addGap(182, 182, 182))
         );
 
         pack();
@@ -124,15 +125,18 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-                pokedex.IndiceUpdateMin = pokedex.IndiceUpdateMin - 40 ;
-                pokedex.IndiceUpdateMax = pokedex.IndiceUpdateMax - 40;
-        try {
-            PreencheListaPokemon();
-        } catch (JSONException ex) {
-            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                        
+         if(pokedex.IndiceUpdateMax > 40){       
+                     pokedex.IndiceUpdateMax = pokedex.IndiceUpdateMax - 40;
+                     pokedex.IndiceUpdateMin = pokedex.IndiceUpdateMin - 40 ;
+                try {
+                    PreencheListaPokemon();
+                } catch (JSONException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+         }
                 
     }//GEN-LAST:event_jButton2ActionPerformed
 
