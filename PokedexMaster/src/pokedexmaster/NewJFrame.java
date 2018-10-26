@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import java.lang.Object;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
@@ -46,7 +47,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                
                 
                       pokedex.ConseguePokemonsInfo();
-                      DefaultListModel dm = new DefaultListModel();
+                      DefaultListModel<NameIcon> dm = new DefaultListModel();
     
                       
                       int i;
@@ -63,7 +64,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
         
     }
 
- 
+ JList<NameIcon> jList1 = new JList<>();
 
      
     @SuppressWarnings("unchecked")
@@ -71,7 +72,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+       
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -180,7 +181,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
         
         
         
-        JOptionPane.showMessageDialog(this,jList1.getSelectedValue()); 
+        jLabel1.setText(jList1.getSelectedValue().getValue()); 
 
 
     }//GEN-LAST:event_jList1MouseClicked
@@ -235,7 +236,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<String> jList1;
+   
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
