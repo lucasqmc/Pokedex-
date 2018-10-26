@@ -64,7 +64,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
         
     }
 
- JList<NameIcon> jList1 = new JList<>();
+ public JList<NameIcon> jList1 = new JList<>();
 
      
     @SuppressWarnings("unchecked")
@@ -72,13 +72,14 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,7 +115,8 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -126,6 +128,8 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(355, Short.MAX_VALUE))
         );
 
@@ -188,34 +192,39 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
     }//GEN-LAST:event_jButton2ActionPerformed
     // Clicou em elemento na lista :
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+
+                      
         int i = 0;
         String SelectedPokemon = jList1.getSelectedValue().getValue();
             
                     
                     
-                       for(i = 0; i<= 500; i++){
+               for(i = 0; i<= 500; i++){
                        
-                           if(pokedex.pokemon[i].name == SelectedPokemon){
+                   if(pokedex.pokemon[i].name == SelectedPokemon){
                                
-                               jLabel1.setText("Name      : : : : : : : :      "+pokedex.pokemon[i].name);
+                      jLabel1.setText("Name:      : : : : : : : :      "+pokedex.pokemon[i].name);
                                
                                     if(pokedex.pokemon[i].Type_1 != "Ausente"){
                                         jLabel2.setText("Type 1:      : : : : : : : :      "+pokedex.pokemon[i].Type_1);
                                     }
-                                    if(pokedex.pokemon[i].Type_2 != "Ausente"){
+                                    if(pokedex.pokemon[i].Type_2.length() == 1){
+
+                                        jLabel3.setText("");
+                                    }
+                                    if(pokedex.pokemon[i].Type_2.length() != 1){
 
                                         jLabel3.setText("Type 2:      : : : : : : : :      "+pokedex.pokemon[i].Type_2);
                                     }
+                                    jLabel4.setText("HP:      : : : : : : : :      "+pokedex.pokemon[i].HP);
+                                    
                                break;
-                           }
+                    }
                        
                        
-                       }
-                      
-                       
-
-
-      //  jLabel1.setText(""); 
+                }
+        
+       
     }//GEN-LAST:event_jList1MouseClicked
 
     
@@ -267,9 +276,10 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
 
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
