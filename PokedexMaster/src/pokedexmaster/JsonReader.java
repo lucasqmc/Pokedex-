@@ -28,6 +28,8 @@ public class JsonReader {
 		
 		return dados;
 	}
+        
+        //Método para pegar os nomes de todos os pokemons :
         public static String get() {
 		String dados = "";
 		try {

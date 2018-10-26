@@ -7,6 +7,9 @@ package pokedexmaster;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -35,22 +38,13 @@ public class Pokedex extends JsonReader {
         int i;
         public int IndiceUpdateMax,IndiceUpdateMin;
                 
-        public ImageIcon RetornaUmIcon() throws IOException {
-          
-                    URL url = new URL("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png");
-              
-                    BufferedImage img = ImageIO.read(url);
 
-       
-            ImageIcon icon = new ImageIcon(img);
-            
-            return icon;
-                       
-          }
                       
                 
         //CONSTRUTOR :
         public Pokedex(){
+            
+            //seta os indices maximo e minimo para o ciclo que coloca os pokemons na list.
             IndiceUpdateMax = 20;
             IndiceUpdateMin = 0;
             
@@ -72,13 +66,14 @@ public class Pokedex extends JsonReader {
             
                 ConstroiPokemons();
                 
-                                String dados = "";
-		
+                String dados = "";		
 		dados = get();
         
                          JSONObject root = parse(dados);
                 
 			 JSONArray pokemonNode = root.getJSONArray("results");
+                         
+                         //Pega nome e id de 949 pokemons criados na pokedex  - - - - ->
 		
 				for (int i = 0; i <= 948  ; i++) {
                                     
@@ -93,9 +88,43 @@ public class Pokedex extends JsonReader {
                                     BufferedImage img = ImageIO.read(url);
                                     
 					pokemon[i].icon = new ImageIcon(img);
-					//pega os icones de dos pokemons(de 20 em 20);
-					
+					//pega os icones de dos pokemons(de 20 em 20).	
 				}
+                String csvFile = "src//data/POKEMONS_DATA1.csv";
+                String csvFile2 = "src//data/POKEMONS_DATA2.csv";
+                BufferedReader br = null;
+                String line = "";
+                String cvsSplitBy = ",";
+                
+                    try {
+                        int i = 0;
+                        br = new BufferedReader(new FileReader(csvFile));
+                        while ((line = br.readLine()) != null) {
+                                
+                            // use comma as separator
+                            String[] cell = line.split(cvsSplitBy);
+
+                            pokemon[i].Type_1 = cell[0];
+                            pokemon[i].Type_2 = cell[1];
+                            pokemon[i].Total = cell[2];
+                            pokemon[i].HP = cell[3];
+                            pokemon[i].Attack = cell[4];
+                            pokemon[i].Defense = cell[5];
+                            pokemon[i].SpAtk = cell[6];
+                            pokemon[i].SpDef = cell[7];
+                            pokemon[i].Speed = cell[8];
+                            pokemon[i].Generation = cell[9];
+                            pokemon[i].Legendary = cell[10];
+                            i++;
+
+                        }
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    
                                 
         }
         

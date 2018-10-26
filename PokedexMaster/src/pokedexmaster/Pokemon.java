@@ -16,8 +16,10 @@ import org.json.JSONObject;
 public class Pokemon extends JsonReader {
     
     	public String name;
-	public int height,weight,id;
+	public int id;
         public ImageIcon icon;
+        public String Type_1,Type_2,Total,HP,Attack,Defense,SpAtk,SpDef,Speed,Generation,Legendary,Experience,
+                Height,Weight,Abilitie_1,Abilitie_2,Abilitie_3,Move_1,Move_2,Move_3,Move_4,Move_5,Move_6,Move_7;
 	
     	public Pokemon() throws JSONException{
 		initializePokemon("");
@@ -43,9 +45,8 @@ public class Pokemon extends JsonReader {
         public void initializePokemon(String dados) throws JSONException{
           
             
-                name = "";
-                height = 0;
-                weight = 0;
+                name = "empty";
+
                 icon = null;
         
         }
