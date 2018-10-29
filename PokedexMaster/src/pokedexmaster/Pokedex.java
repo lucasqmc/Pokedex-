@@ -139,6 +139,8 @@ public class Pokedex extends JsonReader {
                              pokemon[i].Move_2 = cell2[8];
                              pokemon[i].Move_3 = cell2[9];
                              pokemon[i].Move_4 = cell2[10];
+
+                            
                              i++;
                             
                              
