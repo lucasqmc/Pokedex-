@@ -55,9 +55,7 @@ public class Pokedex extends JsonReader {
         
             for(i=0;i<=948;i++){
         
-                pokemon[i] = new Pokemon();
-        
-               
+                pokemon[i] = new Pokemon();  
             }
         
         }
@@ -90,9 +88,11 @@ public class Pokedex extends JsonReader {
 					pokemon[i].icon = new ImageIcon(img);
 					//pega os icones de dos pokemons(de 20 em 20).	
 				}
+                //Leitura dos arquivos csv :                
                 String csvFile = "src//data/POKEMONS_DATA1.csv";
                 String csvFile2 = "src//data/POKEMONS_DATA2.csv";
                 BufferedReader br = null;
+                BufferedReader br2 = null;
                 String line = "";
                 String cvsSplitBy = ",";
                 
@@ -124,8 +124,26 @@ public class Pokedex extends JsonReader {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    
-                                
+                       int i = 0;
+                       br2 = new BufferedReader(new FileReader(csvFile2));
+                        while ((line = br2.readLine()) != null){
+                            String[] cell2 = line.split(",");
+                        
+                             pokemon[i].Experience = cell2[0];
+                             pokemon[i].Height = cell2[1];
+                             pokemon[i].Weight = cell2[2];
+                             pokemon[i].Abilitie_1 = cell2[4];
+                             pokemon[i].Abilitie_2 = cell2[5];
+                             pokemon[i].Abilitie_3 = cell2[6];
+                             pokemon[i].Move_1 = cell2[7];
+                             pokemon[i].Move_2 = cell2[8];
+                             pokemon[i].Move_3 = cell2[9];
+                             pokemon[i].Move_4 = cell2[10];
+                             i++;
+                            
+                             
+                   
+                        }                    
         }
         
 }

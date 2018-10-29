@@ -72,7 +72,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        
+       
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -101,14 +101,14 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
         });
         jScrollPane2.setViewportView(jList1);
 
-        jButton1.setText("Mais 20 pokemons");
+        jButton1.setText("Mais ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Menos 20 pokemons");
+        jButton2.setText("Menos ");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -167,7 +167,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(168, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -183,17 +183,17 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(26, 26, 26)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 371, Short.MAX_VALUE)
+                .addGap(247, 247, 247)
                 .addComponent(jButton2)
-                .addGap(72, 72, 72)
+                .addGap(35, 35, 35)
                 .addComponent(jButton1)
-                .addGap(184, 184, 184))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -260,6 +260,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                                         if(pokedex.pokemon[i].Legendary.length() != 4){
                                             jLabel12.setText("");
                                         }
+                                   jLabel13.setText("Experience   : :  " +pokedex.pokemon[i].Experience);
                                    
                                     
                                break;
@@ -328,7 +329,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
     public javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabel8;
     public javax.swing.JLabel jLabel9;
-    
+
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
