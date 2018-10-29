@@ -60,8 +60,8 @@ public class Pokedex extends JsonReader {
         
         }
         
-        public void ConseguePokemonsInfo() throws JSONException, IOException{
-            
+        public void ConsegueNomes() throws JSONException, IOException{
+        
                 ConstroiPokemons();
                 
                 String dados = "";		
@@ -72,23 +72,17 @@ public class Pokedex extends JsonReader {
 			 JSONArray pokemonNode = root.getJSONArray("results");
                          
                          //Pega nome e id de 949 pokemons criados na pokedex  - - - - ->
-		
-				for (int i = 0; i <= 948  ; i++) {
-                                    
-					pokemon[i].name = pokemonNode.getJSONObject(i).getString("name");
-					pokemon[i].id = i +1;//pega os nomes e ids dos pokemons 
-					
-				}
-                                for (int i = IndiceUpdateMin; i <= IndiceUpdateMax; i++) {
-                                    
-                                    URL url = new URL("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+ (i+1) + ".png" );
-              
-                                    BufferedImage img = ImageIO.read(url);
-                                    
-					pokemon[i].icon = new ImageIcon(img);
-					//pega os icones de dos pokemons(de 20 em 20).	
-				}
-                //Leitura dos arquivos csv :                
+                            
+                                        for (int i = 0; i <= 948  ; i++) {
+
+                                                pokemon[i].name = pokemonNode.getJSONObject(i).getString("name");
+                                                pokemon[i].id = i +1;//pega os nomes e ids dos pokemons 
+                                        }
+
+        }
+        public void ConsegueCaracts() throws FileNotFoundException, IOException{
+        
+         //Leitura dos arquivos csv :                
                 String csvFile = "src//data/POKEMONS_DATA1.csv";
                 String csvFile2 = "src//data/POKEMONS_DATA2.csv";
                 BufferedReader br = null;
@@ -146,6 +140,23 @@ public class Pokedex extends JsonReader {
                              
                    
                         }                    
+        
+        }
+        
+        public void ConseguePokemonsInfo() throws JSONException, IOException{
+            
+                    ConsegueNomes();
+
+                                for (int i = IndiceUpdateMin; i <= IndiceUpdateMax; i++) {
+                                    
+                                    URL url = new URL("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+ (i+1) + ".png" );
+              
+                                    BufferedImage img = ImageIO.read(url);
+                                    
+					pokemon[i].icon = new ImageIcon(img);
+					//pega os icones de dos pokemons(de 20 em 20).	
+				}
+                    ConsegueCaracts(); 
         }
         
 }
