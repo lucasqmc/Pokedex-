@@ -45,7 +45,7 @@ public class Pokedex extends JsonReader {
         public Pokedex(){
             
             //seta os indices maximo e minimo para o ciclo que coloca os pokemons na list.
-            IndiceUpdateMax = 20;
+            IndiceUpdateMax = 10;
             IndiceUpdateMin = 0;
             
         }

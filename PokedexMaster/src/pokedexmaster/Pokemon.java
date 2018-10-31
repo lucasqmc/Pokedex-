@@ -45,7 +45,7 @@ public class Pokemon extends JsonReader {
         public void initializePokemon(String dados) throws JSONException{
           
             
-                name = "empty";
+                name = "vazio";
 
                 icon = null;
         
