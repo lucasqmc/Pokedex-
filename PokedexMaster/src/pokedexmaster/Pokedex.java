@@ -35,6 +35,8 @@ public class Pokedex extends JsonReader {
     
         // Vetor de objetos que irão conter os pokemons :
 	public Pokemon[] pokemon = new Pokemon[722];
+        //Lista que ira conter os treinadores :
+        public List<Treinador> treinadores = new ArrayList<Treinador>();
         int i;
         public int IndiceUpdateMax,IndiceUpdateMin;
 

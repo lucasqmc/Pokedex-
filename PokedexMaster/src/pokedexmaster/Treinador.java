@@ -24,8 +24,14 @@ public class Treinador extends Pokedex {
     public Treinador() throws JSONException, IOException{
     
             ConsegueNomes();
+            numero_pokemons = 0;
     
     };
+    public Treinador(String nome){
+    
+            this.nome = nome;
+    
+    }
     
         
     
