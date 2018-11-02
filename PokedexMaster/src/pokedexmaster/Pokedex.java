@@ -33,19 +33,16 @@ import org.json.JSONObject;
  */
 public class Pokedex extends JsonReader {
     
-
-	Pokemon[] pokemon = new Pokemon[950];
+        // Vetor de objetos que irão conter os pokemons :
+	public Pokemon[] pokemon = new Pokemon[722];
         int i;
         public int IndiceUpdateMax,IndiceUpdateMin;
-                
 
-                      
-                
         //CONSTRUTOR :
         public Pokedex(){
             
             //seta os indices maximo e minimo para o ciclo que coloca os pokemons na list.
-            IndiceUpdateMax = 10;
+            IndiceUpdateMax = 5;
             IndiceUpdateMin = 0;
             
         }
@@ -53,7 +50,7 @@ public class Pokedex extends JsonReader {
         
         public void ConstroiPokemons() throws JSONException, IOException{
         
-            for(i=0;i<=948;i++){
+            for(i=0;i<=720;i++){
         
                 pokemon[i] = new Pokemon();  
             }
@@ -73,7 +70,7 @@ public class Pokedex extends JsonReader {
                          
                          //Pega nome e id de 949 pokemons criados na pokedex  - - - - ->
                             
-                                        for (int i = 0; i <= 948  ; i++) {
+                                        for (int i = 0; i <= 720  ; i++) {
 
                                                 pokemon[i].name = pokemonNode.getJSONObject(i).getString("name");
                                                 pokemon[i].id = i +1;//pega os nomes e ids dos pokemons 

@@ -22,7 +22,9 @@ public class Pokemon extends JsonReader {
                 Height,Weight,Abilitie_1,Abilitie_2,Abilitie_3,Move_1,Move_2,Move_3,Move_4,Move_5,Move_6,Move_7;
 	
     	public Pokemon() throws JSONException{
-		initializePokemon("");
+		
+                 name = "vazio";
+                 icon = null;
 	}
         
         
@@ -37,20 +39,10 @@ public class Pokemon extends JsonReader {
 			e.printStackTrace();
 		}
 		
-		initializePokemon(dados);
+		
 	}
         
-        
-    
-        public void initializePokemon(String dados) throws JSONException{
-          
-            
-                name = "vazio";
 
-                icon = null;
-        
-        }
-        
         public ImageIcon getIcon(){
             return icon;
      
