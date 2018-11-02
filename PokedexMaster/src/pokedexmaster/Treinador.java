@@ -15,7 +15,7 @@ import org.json.JSONException;
 public class Treinador extends Pokedex {
     
     public String nome;
-    public String[] added_pokemon;
+    public String added_pokemon;
     public int numero_pokemons;
     
 
