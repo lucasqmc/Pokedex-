@@ -279,6 +279,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
             }
         });
 
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(281, 612));
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTabbedPane1MouseClicked(evt);
@@ -353,7 +354,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                 .addComponent(jButton4)
                 .addGap(35, 35, 35)
                 .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Cadastro", jPanel2);
@@ -373,7 +374,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Treinadores", jPanel3);
@@ -435,9 +436,9 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                         .addComponent(jButton2)
                         .addGap(35, 35, 35)
                         .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 612, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -616,10 +617,13 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                 String nome_pokemon = jList1.getSelectedValue().getValue().intern();
                 int i;
                 int aux = 0 ;
+                int aux2 = 0 ;
                     for (i = 0; i < pokedex.treinadores.size(); i++ ){
                             if(nome_treinador == pokedex.treinadores.get(i).nome){
-                                 pokedex.treinadores.get(i).added_pokemon = nome_pokemon;
-                                 aux = 1;
+                                // adiciona  a string que contem o nome do pokemon ao vetor de strings de Treinador.
+                                 pokedex.treinadores.get(i).added_pokemon[pokedex.treinadores.get(i).numero_pokemons] = nome_pokemon;
+                                 aux = 1; // variavel para confirmar se pokemon foi adicionado ao treinador.
+                                 pokedex.treinadores.get(i).numero_pokemons++;
                                     break;
                             }
                     }
@@ -634,10 +638,43 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
         int i;
        
        for(i = 0 ; i < pokedex.treinadores.size(); i++ ){
+           LimpaJLabels();
            if( pokedex.treinadores.get(i).nome == nome ){
                
                jLabel1.setText("Nome : " +pokedex.treinadores.get(i).nome);
-               jLabel2.setText("Pokemon 1 : " +pokedex.treinadores.get(i).added_pokemon);
+               jLabel2.setText("Pokemons : ");
+                   
+                if(pokedex.treinadores.get(i).added_pokemon[0] == null){
+                   jLabel3.setText("Ainda não há pokemons");
+
+
+                }
+               else{
+
+                   jLabel3.setText(pokedex.treinadores.get(i).added_pokemon[0]);
+                   
+                   if(pokedex.treinadores.get(i).added_pokemon[1] != null){
+                      jLabel4.setText(pokedex.treinadores.get(i).added_pokemon[1]);
+                   }
+                   if(pokedex.treinadores.get(i).added_pokemon[2] != null){
+                      jLabel5.setText(pokedex.treinadores.get(i).added_pokemon[2]);
+                   }
+                   if(pokedex.treinadores.get(i).added_pokemon[3] != null){
+                      jLabel6.setText(pokedex.treinadores.get(i).added_pokemon[3]);
+                   }
+                   if(pokedex.treinadores.get(i).added_pokemon[4] != null){
+                      jLabel7.setText(pokedex.treinadores.get(i).added_pokemon[4]);
+                   }
+                   if(pokedex.treinadores.get(i).added_pokemon[5] != null){
+                      jLabel8.setText(pokedex.treinadores.get(i).added_pokemon[5]);
+                   }
+                   if(pokedex.treinadores.get(i).added_pokemon[6] != null){
+                      jLabel9.setText(pokedex.treinadores.get(i).added_pokemon[6]);
+                   }
+
+               }
+           
+               
            
                break;
            }
@@ -645,7 +682,26 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
        }
        
     }//GEN-LAST:event_jList2MouseClicked
-
+    public void LimpaJLabels(){
+                   jLabel4.setText("");
+                   jLabel5.setText("");
+                   jLabel6.setText("");
+                   jLabel7.setText("");
+                   jLabel8.setText("");
+                   jLabel9.setText("");
+                   jLabel10.setText("");
+                   jLabel11.setText("");
+                   jLabel12.setText("");
+                   jLabel13.setText("");
+                   jLabel14.setText("");
+                   jLabel15.setText("");
+                   jLabel16.setText("");
+                   jLabel17.setText("");
+                   jLabel18.setText("");
+                   jLabel19.setText("");
+                   jLabel20.setText("");
+                   jLabel25.setText("");
+    }
     /**
      * @param args the command line arguments
      */
@@ -726,7 +782,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
     public javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabel8;
     public javax.swing.JLabel jLabel9;
-  
+
     private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -15,7 +15,7 @@ import org.json.JSONException;
 public class Treinador extends Pokedex {
     
     public String nome;
-    public String added_pokemon;
+    public String [] added_pokemon = new String[20];
     public int numero_pokemons;
     
 
@@ -23,16 +23,21 @@ public class Treinador extends Pokedex {
     
     public Treinador() throws JSONException, IOException{
     
-            ConsegueNomes();
+          
             numero_pokemons = 0;
+            int i;
+            
+            for(i = 0;i <= 29; i++){
+                added_pokemon[i] = ""; 
+            }
     
     };
     public Treinador(String nome){
     
             this.nome = nome;
-    
+            this.numero_pokemons = 0;
+            
+
     }
-    
-        
-    
+
 }
