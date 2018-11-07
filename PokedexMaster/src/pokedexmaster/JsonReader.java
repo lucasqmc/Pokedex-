@@ -5,9 +5,6 @@
  */
 package pokedexmaster;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import org.apache.http.client.fluent.Request;
 
 
@@ -17,7 +14,7 @@ import org.json.*;
 
 public class JsonReader {
     
-    
+        //Método para pegar dados(da api) do pokemon individual.
     	public static String get(String urlAddress) {
 		String dados = "";
 		try {
@@ -40,7 +37,7 @@ public class JsonReader {
 		
 		return dados;
 	}
-        
+        //Método para transformar string obtida em um JSONOBject, podendo assim separar os dados corretamente
         public JSONObject parse(String dados) {
 		JSONObject root;
 		try {

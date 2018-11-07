@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PokedexMaster">
+  <ClassDiagramComponents>
+    <Class name="JsonReader" package="pokedexmaster" visibility="public" xPosition="15.0" yPosition="53.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="get" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="urlAddress"/>
+        </Method>
+        <Method name="get" returnType="String" visibility="public" isStatic="true"/>
+        <Method name="parse" returnType="JSONObject" visibility="public">
+          <Argument type="String" name="dados"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NewJFrame" package="pokedexmaster" visibility="public" xPosition="824.0" yPosition="-4.0">
+      <Fields>
+        <Field name="pokedex" type="Pokedex" visibility="public"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton4" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton5" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jComboBox1" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel11" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel12" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel13" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel14" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel15" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel16" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel17" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel18" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel19" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel20" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel21" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel22" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel23" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel24" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel25" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel26" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel27" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel28" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel29" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jList2" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel3" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTabbedPane1" type="javax.swing.JTabbedPane" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jList1" type="JList&lt;NameIcon&gt;" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="PreencheListaPokemon" returnType="void" visibility="public"/>
+        <Method name="PreencheListaPokemon" returnType="void" visibility="public">
+          <Argument type="int" name="ID"/>
+        </Method>
+        <Method name="PreencheListaTreinador" returnType="void" visibility="public"/>
+        <Method name="PreencheComboTreinador" returnType="void" visibility="public"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jList1MouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton4ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jTabbedPane1MouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButton5ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jList2MouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="LimpaJLabels" returnType="void" visibility="public"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="valueChanged" returnType="void" visibility="public">
+          <Argument type="ListSelectionEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pokedex" package="pokedexmaster" visibility="public" xPosition="418.0" yPosition="100.0">
+      <Fields>
+        <Field name="pokemon" type="Pokemon[]" visibility="public"/>
+        <Field name="treinadores" type="List&lt;Treinador&gt;" visibility="public"/>
+        <Field name="i" type="int" visibility="package"/>
+        <Field name="IndiceUpdateMax" type="int" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="ConstroiPokemons" returnType="void" visibility="public"/>
+        <Method name="ConsegueNomes" returnType="void" visibility="public"/>
+        <Method name="ConsegueCaracts" returnType="void" visibility="public"/>
+        <Method name="ConseguePokemonsInfo" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="NameIcon" package="pokedexmaster" visibility="public" xPosition="214.0" yPosition="720.0">
+      <Fields>
+        <Field name="value" type="String" visibility="private"/>
+        <Field name="icon" type="ImageIcon" visibility="private"/>
+        <Field name="ID" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="value"/>
+          <Argument type="ImageIcon" name="icon"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getValue" returnType="String" visibility="public"/>
+        <Method name="getIcon" returnType="ImageIcon" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Renderer" package="pokedexmaster" visibility="public" xPosition="824.0" yPosition="1193.0">
+      <Fields>
+        <Field name="label" type="JLabel" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getListCellRendererComponent" returnType="Component" visibility="public">
+          <Argument type="JList" name="list"/>
+          <Argument type="Object" name="value"/>
+          <Argument type="int" name="index"/>
+          <Argument type="boolean" name="isSelected"/>
+          <Argument type="boolean" name="cellHasFocus"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pokemon" package="pokedexmaster" visibility="public" xPosition="62.0" yPosition="332.0">
+      <Fields>
+        <Field name="name" type="String" visibility="public"/>
+        <Field name="id" type="int" visibility="public"/>
+        <Field name="icon" type="ImageIcon" visibility="public"/>
+        <Field name="Type_1" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="ID"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIcon" returnType="ImageIcon" visibility="public"/>
+        <Method name="getName" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Treinador" package="pokedexmaster" visibility="public" xPosition="418.0" yPosition="495.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="public"/>
+        <Field name="added_pokemon" type="String[]" visibility="public"/>
+        <Field name="numero_pokemons" type="int" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nome"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="pokedexmaster.Pokedex" target="pokedexmaster.JsonReader"/>
+    <HasRelation name="treinadores" source="pokedexmaster.Pokedex" target="pokedexmaster.Treinador" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Treinador&gt;"/>
+    <IsRelation name="is" source="pokedexmaster.Pokemon" target="pokedexmaster.JsonReader"/>
+    <IsRelation name="is" source="pokedexmaster.Treinador" target="pokedexmaster.Pokedex"/>
+    <HasRelation name="pokedex" source="pokedexmaster.NewJFrame" target="pokedexmaster.Pokedex" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jList1" source="pokedexmaster.NewJFrame" target="pokedexmaster.NameIcon" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="JList&lt;NameIcon&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

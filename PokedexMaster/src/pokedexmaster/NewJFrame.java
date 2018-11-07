@@ -11,13 +11,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
-import java.lang.Object;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
-import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import org.json.JSONException;
@@ -43,7 +41,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
     ////////////////// Métodos para preencher listas e combobox : ///////////////////////
 
    public void PreencheListaPokemon() throws JSONException, IOException{
-        // Uso funções da pokedex para construir os pokemons.
+        // Uso funções da pokedex para conseguir os pokemons.
                
                 
            pokedex.ConseguePokemonsInfo();
@@ -432,7 +430,7 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
         pack();
     }// </editor-fold>//GEN-END:initComponents
 //FIM
-    
+    // AÇÕES E BOTÕES PRESSIONADOS :
     //Botão para mais 5 pokemons ->
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
@@ -468,10 +466,10 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                        
                    if(pokedex.pokemon[i].name == SelectedPokemon){
                                
-                      jLabel1.setText("Name:      : : : : :       "+pokedex.pokemon[i].name);
+                        jLabel1.setText("Name: . . . ."+pokedex.pokemon[i].name);
                                
                                     if(pokedex.pokemon[i].Type_1 != "Ausente"){
-                                        jLabel2.setText("Type 1:      : : : : :       "+pokedex.pokemon[i].Type_1);
+                                        jLabel2.setText("Type 1: . . . ."+pokedex.pokemon[i].Type_1);
                                     }
                                     if(pokedex.pokemon[i].Type_2.length() == 1){
 
@@ -479,16 +477,16 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                                     }
                                     if(pokedex.pokemon[i].Type_2.length() != 1){
 
-                                        jLabel3.setText("Type 2:      : : :       "+pokedex.pokemon[i].Type_2);
+                                        jLabel3.setText("Type 2: . . . ."+pokedex.pokemon[i].Type_2);
                                     }
-                                    jLabel4.setText("HP:      : : :       "+pokedex.pokemon[i].HP);
-                                    jLabel6.setText("Attack:      : : :       "+pokedex.pokemon[i].Attack);
-                                    jLabel7.setText("Defense:      : : :       "+pokedex.pokemon[i].Defense);
-                                    jLabel8.setText("Speed:      : : :       "+pokedex.pokemon[i].Speed );
-                                    jLabel9.setText("Suported Attack Lvl    :   "+pokedex.pokemon[i].SpAtk );
-                                    jLabel10.setText("Suported Defense Lvl  :  "+pokedex.pokemon[i].SpDef );
-                                    jLabel25.setText("Total   : :   " +pokedex.pokemon[i].Total);
-                                    jLabel11.setText("Generation      : : :       "+pokedex.pokemon[i].Generation );
+                                    jLabel5.setText("HP  =    "+pokedex.pokemon[i].HP);
+                                    jLabel6.setText("Attack  =    "+pokedex.pokemon[i].Attack);
+                                    jLabel7.setText("Defense  =    "+pokedex.pokemon[i].Defense);
+                                    jLabel8.setText("Speed  =    "+pokedex.pokemon[i].Speed );
+                                    jLabel9.setText("Suported Attack Lvl   =       "+pokedex.pokemon[i].SpAtk );
+                                    jLabel10.setText("Suported Defense Lvl    =    "+pokedex.pokemon[i].SpDef );
+                                    jLabel25.setText("Total  =    " +pokedex.pokemon[i].Total);
+                                    jLabel11.setText("Generation  "+pokedex.pokemon[i].Generation );
                                         if(pokedex.pokemon[i].Legendary.length() == 4){
                                              jLabel12.setText("POKEMON LENDÁRIO");
                                         }
@@ -500,16 +498,16 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                                         float altura = Float.parseFloat(pokedex.pokemon[i].Height)/10;
                                        
                                         
-                                   jLabel13.setText("Experience   : :  " +pokedex.pokemon[i].Experience + " pts");
-                                   jLabel14.setText("Weight   : :  " +peso + " Kg");
-                                   jLabel15.setText("Height   : :  " +altura + " m");
+                                   jLabel13.setText("Experience: . . . . ." +pokedex.pokemon[i].Experience + " pts");
+                                   jLabel14.setText("Weight: . . . . ." +peso + " Kg");
+                                   jLabel15.setText("Height: . . . . ." +altura + " m");
         
                                break;
                     }
                          
                 }    
     }//GEN-LAST:event_jList1MouseClicked
-    // BOTÃO PESQUISAR :
+    // BOTÃO PESQUISAR POR NOME :
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
             pokedex.ConsegueNomes();
@@ -518,15 +516,16 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        int aux = 0;
-        String s = jTextField1.getText().intern();
+        int aux = 0;//Auxiliar que indica se achou o pokemon ou nao 
+        String s = jTextField1.getText().intern().toLowerCase();
+        System.out.println(s);
         for(int i = 0; i <= 720; i++){
-                if(s == pokedex.pokemon[i].name.intern()){
+                if(s.intern() == pokedex.pokemon[i].name.intern()){
                         aux = 1;
-                        jLabel1.setText("Name:      : : : : :       "+pokedex.pokemon[i].name);
+                        jLabel1.setText("Name: . . . ."+pokedex.pokemon[i].name);
                                
                                     if(pokedex.pokemon[i].Type_1 != "Ausente"){
-                                        jLabel2.setText("Type 1:      : : : : :       "+pokedex.pokemon[i].Type_1);
+                                        jLabel2.setText("Type 1: . . . ."+pokedex.pokemon[i].Type_1);
                                     }
                                     if(pokedex.pokemon[i].Type_2.length() == 1){
 
@@ -534,16 +533,16 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                                     }
                                     if(pokedex.pokemon[i].Type_2.length() != 1){
 
-                                        jLabel3.setText("Type 2:      : : :       "+pokedex.pokemon[i].Type_2);
+                                        jLabel3.setText("Type 2: . . . ."+pokedex.pokemon[i].Type_2);
                                     }
-                                    jLabel4.setText("HP:      : : :       "+pokedex.pokemon[i].HP);
-                                    jLabel6.setText("Attack:      : : :       "+pokedex.pokemon[i].Attack);
-                                    jLabel7.setText("Defense:      : : :       "+pokedex.pokemon[i].Defense);
-                                    jLabel8.setText("Speed:      : : :       "+pokedex.pokemon[i].Speed );
-                                    jLabel9.setText("Suported Attack Lvl    :   "+pokedex.pokemon[i].SpAtk );
-                                    jLabel10.setText("Suported Defense Lvl  :  "+pokedex.pokemon[i].SpDef );
-                                    jLabel25.setText("Total   : :   " +pokedex.pokemon[i].Total);
-                                    jLabel11.setText("Generation      : : :       "+pokedex.pokemon[i].Generation );
+                                    jLabel5.setText("HP:         "+pokedex.pokemon[i].HP);
+                                    jLabel6.setText("Attack  =    "+pokedex.pokemon[i].Attack);
+                                    jLabel7.setText("Defense  =    "+pokedex.pokemon[i].Defense);
+                                    jLabel8.setText("Speed  =    "+pokedex.pokemon[i].Speed );
+                                    jLabel9.setText("Suported Attack Lvl =       "+pokedex.pokemon[i].SpAtk );
+                                    jLabel10.setText("Suported Defense Lvl  =    "+pokedex.pokemon[i].SpDef );
+                                    jLabel25.setText("Total  =    " +pokedex.pokemon[i].Total);
+                                    jLabel11.setText("Generation  "+pokedex.pokemon[i].Generation );
                                         if(pokedex.pokemon[i].Legendary.length() == 4){
                                              jLabel12.setText("POKEMON LENDÁRIO");
                                         }
@@ -555,9 +554,9 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                                         float altura = Float.parseFloat(pokedex.pokemon[i].Height)/10;
                                        
                                         
-                                   jLabel13.setText("Experience   : :  " +pokedex.pokemon[i].Experience + " pts");
-                                   jLabel14.setText("Weight   : :  " +peso + " Kg");
-                                   jLabel15.setText("Height   : :  " +altura + " m");
+                                   jLabel13.setText("Experience: . . . . ." +pokedex.pokemon[i].Experience + " pts");
+                                   jLabel14.setText("Weight: . . . . ." +peso + " Kg");
+                                   jLabel15.setText("Height: . . . . ." +altura + " m");
                                    
                     try {
                         PreencheListaPokemon(pokedex.pokemon[i].id);
@@ -567,19 +566,14 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                        break;
                 }
              if(aux == 0 && i == 720){
-                 //SÓ ENTRA AQUI SE ESTIVER NO ULTIMO CICLO
+                 //SÓ ENTRA AQUI SE ESTIVER NO ULTIMO CICLO E NÃO TIVER ACHADO NADA
                  JOptionPane.showMessageDialog(rootPane, "Pokemon não encontrado ! ");
-                    try {
-                        PreencheListaPokemon();
-                    } catch (JSONException | IOException ex) {
-                        Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-             
+
              }   
         }
         
     }//GEN-LAST:event_jButton3ActionPerformed
-    //BOTAO PARA CADASTRAR POKEMON :
+    //BOTAO PARA CADASTRAR TREINADOR :
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        String nome = jTextField2.getText().intern();
        Treinador trainer = new Treinador(nome);
@@ -588,10 +582,17 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
        
        jLabel29.setText(nome +" Cadastrado !");
     }//GEN-LAST:event_jButton4ActionPerformed
-
+    // CLICOU EM QUALQUER LUGAR NO TABBED PANE: 
     private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
         PreencheListaTreinador();
-        jLabel29.setText("");
+        LimpaJLabels();
+        jLabel1.setText("");
+        jLabel2.setText("");
+        jLabel5.setText("");
+        jLabel3.setText("");
+        jLabel20.setText("");
+        jLabel21.setText("");
+        
     }//GEN-LAST:event_jTabbedPane1MouseClicked
     //BOTAO PARA ADICIONAR POKEMON AO TREINADOR :
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -601,19 +602,23 @@ public class NewJFrame extends javax.swing.JFrame implements ListSelectionListen
                 String nome_pokemon = jList1.getSelectedValue().getValue().intern();//item selecionado na lista de pokemons.
                 int i;
                 int aux = 0 ;
-                int aux2 = 0 ;
+                
                     for (i = 0; i < pokedex.treinadores.size(); i++ ){
                             if(nome_treinador == pokedex.treinadores.get(i).nome){
                                 // adiciona  a string que contem o nome do pokemon ao vetor de strings de Treinador.
                                  pokedex.treinadores.get(i).added_pokemon[pokedex.treinadores.get(i).numero_pokemons] = nome_pokemon;
                                  aux = 1; // variavel para confirmar se pokemon foi adicionado ao treinador.
                                  pokedex.treinadores.get(i).numero_pokemons++;
+                                 JOptionPane.showMessageDialog(rootPane, "Pokemon adicionado com sucesso! ");
                                     break;
                             }
                     }
                 
                 System.out.println(aux);
 
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Ainda não há treinadores!");
         }
     }//GEN-LAST:event_jButton5ActionPerformed
     // QUANDO CLICAR EM UM ITEM DA LISTA DE TREINADORES:

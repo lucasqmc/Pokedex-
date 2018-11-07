@@ -5,22 +5,15 @@
  */
 package pokedexmaster;
 
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -125,13 +118,7 @@ public class Pokedex extends JsonReader {
                              pokemon[i].Experience = cell2[0];
                              pokemon[i].Height = cell2[1];
                              pokemon[i].Weight = cell2[2];
-                             pokemon[i].Abilitie_1 = cell2[4];
-                             pokemon[i].Abilitie_2 = cell2[5];
-                             pokemon[i].Abilitie_3 = cell2[6];
-                             pokemon[i].Move_1 = cell2[7];
-                             pokemon[i].Move_2 = cell2[8];
-                             pokemon[i].Move_3 = cell2[9];
-                             pokemon[i].Move_4 = cell2[10];
+
 
                             
                              i++;
