@@ -4,7 +4,8 @@ Acesse a descrição completa deste exercício na [wiki](https://gitlab.com/oofg
 
 # Como usar o projeto
 
-* Abra o projeto em uma IDE , de preferencia Net beans ou Eclipse e pressione o botão "Run", que é representado por um simbolo de "play".
+* Abra o terminal na pasta PokedexMaster e digite java -jar PokedexMaster.jar e aperte enter.
+* Abra o projeto em uma IDE , de preferencia Net beans ou Eclipse , clique em PokedexMaster e pressione o botão "Run", que é representado por um simbolo de "play".
 
 
 
@@ -31,6 +32,7 @@ As funcionalidades do projeto são:
 ## Bugs e problemas
 
 * Após criar o .jar (executavel do projeto) pelo netbeans e roda-lo com o terminal, o terminal apresenta um erro dizendo que não foram encontrados os arquivos .csv , impossibilitando a execução do programa.
+* Problema acima foi resolvido e comitado logo em seguida sem nenhuma modificação no codigo, apenas mudei o .jar de pasta e funcionou. 
 
 ## Referências
 
